@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && PORT=7727 react-scripts start",
-    "build": "react-scripts build",
+    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "tbuild": "tailwindcss -i ./tailwindcss.css -o ./src/styles/style.css -w"
