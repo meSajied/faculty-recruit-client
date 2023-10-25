@@ -1,0 +1,22 @@
+[
+  {
+    "job_id": "ac2eb22",
+    "title": "We need a Professor",
+    "opens": "2023-10-15",
+    "closes": "2023-10-31",
+    "school": "",
+    "department": "CSE",
+    "position": "Professor",
+    "description": "We are looking for a talented Front-End Developer to join our innovative team. You will be responsible for designing and implementing user interfaces, ensuring the responsiveness of web applications, and collaborating with back-end developers to integrate with server-side logic. As a Front-End Developer, you will have the opportunity to work on cutting-edge projects that push the boundaries of web technology. If you are passionate about creating beautiful and functional user experiences and have expertise in HTML, CSS, and JavaScript, we would love to have you on board!"
+  },
+  {
+    "job_id": "13c3deb",
+    "title": "We need a lecturer",
+    "opens": "2023-11-05",
+    "closes": "2023-11-20",
+    "school": "",
+    "department": "EEE",
+    "position": "Lecturer",
+    "description": "We are seeking a highly skilled Data Scientist to join our data analytics team. In this role, you will be responsible for analyzing large datasets, developing predictive models, and extracting valuable insights to drive data-driven decisions. You will work closely with our engineering and business teams to identify opportunities for leveraging data to solve complex problems. The ideal candidate has a strong background in statistics, machine learning, and data visualization. If you have a passion for data and want to make a significant impact, we encourage you to apply and be part of our data-driven journey!"
+  }
+]

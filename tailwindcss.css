@@ -1,0 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=EB+Garamond&family=Sawarabi+Mincho&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
