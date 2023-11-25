@@ -1,10 +1,15 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const Navbar = () => {
   return(
-      <nav className="bg-sust-wall flex flex-row flex-wrap font-garamond justify-items-center">
-
-       </nav>
+      <nav className="m-5 flex justify-end">
+        <Link to="login" className="font-sawarabi
+            font-bold text-2xl text-black
+            no-underline">
+            Login
+        </Link>
+      </nav>
   )
 }
 

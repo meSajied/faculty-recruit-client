@@ -1,13 +1,18 @@
 import React from "react";
-import Brand from "../components/Brand";
 
-import data from "../job.json"
+import Brand from "../components/Brand";
+import Navbar from "../components/Navbar";
+import data from "../job.json";
 
 function Home() {
   return(
       <div>
         <div>
         <Brand />
+        </div>
+
+        <div>
+          <Navbar />
         </div>
 
         <div className="m-4 p-4">
@@ -30,17 +35,18 @@ const getJsonData = (data) => {
           {item.title}
         </div>
 
-        <div className="flex flex-row">
+        <div className="flex">
           <div className="flex-grow font-semibold m-2">
             Department: {item.department}
           </div>
 
-          <div className="m-2 flex-grow flex-col font-sans">
+          <div className="m-2 flex-grow">
             <div className="flex-grow font-semibold">
-              Advertised: <code className="font-hack font-normal">{item.opens}</code>
+              Advertised: <code className="code">{item.opens}</code>
             </div>
+
             <div className="flex-grow font-semibold">
-              Deadline: <code className="font-hack font-normal">{item.closes}</code>
+              Deadline: <code className="code">{item.closes}</code>
             </div>
           </div>
         </div>

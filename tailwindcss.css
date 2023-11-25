@@ -3,3 +3,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    .code {
+        @apply font-hack font-normal text-[0.9rem]
+    }
+}
