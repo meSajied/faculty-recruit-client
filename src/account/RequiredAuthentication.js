@@ -3,11 +3,14 @@ import {useAuth} from "./Authentication";
 import {Navigate} from "react-router";
 
 function RequiredAuthentication({children}) {
-  let loggedIn = useAuth().user;
+  let auth = useAuth();
 
-  return(
-      loggedIn ? {children}: <Navigate to='login' />
-  )
+  console.log(auth.user);
+  if(!auth.user) {
+    return <Navigate to='/login' />
+  }
+
+  return children;
 }
 
 export {RequiredAuthentication};

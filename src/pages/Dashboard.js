@@ -1,6 +1,8 @@
 import React from "react";
-const Dashboard
-    = () => {
+import {useAuth} from "../account/Authentication";
+
+const Dashboard = () => {
+  const auth = useAuth()
   return(
       <>
         <h1>dashboard</h1>

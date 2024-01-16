@@ -168,40 +168,12 @@
   margin: 1.25rem
 }
 
-.m-3{
-  margin: 0.75rem
-}
-
-.m-7{
-  margin: 1.75rem
-}
-
-.box-border{
-  box-sizing: border-box
-}
-
 .flex{
   display: flex
 }
 
 .flex-grow{
   flex-grow: 1
-}
-
-.flex-row{
-  flex-direction: row
-}
-
-.flex-col{
-  flex-direction: column
-}
-
-.flex-wrap{
-  flex-wrap: wrap
-}
-
-.items-end{
-  align-items: flex-end
 }
 
 .items-center{
@@ -216,8 +188,32 @@
   justify-content: center
 }
 
-.justify-items-center{
-  justify-items: center
+.space-x-0 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0px * var(--tw-space-x-reverse));
+  margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)))
+}
+
+.space-x-0\.5 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.125rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.125rem * calc(1 - var(--tw-space-x-reverse)))
+}
+
+.space-x-3 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))
+}
+
+.space-x-5 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)))
+}
+
+.whitespace-break-spaces{
+  white-space: break-spaces
 }
 
 .bg-red-700{
@@ -241,6 +237,10 @@
   padding: 2rem
 }
 
+.p-1{
+  padding: 0.25rem
+}
+
 .p-2{
   padding: 0.5rem
 }
@@ -251,6 +251,11 @@
 
 .font-sawarabi{
   font-family: "Sawarabi Mincho", serif
+}
+
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem
 }
 
 .text-3xl{
@@ -268,27 +273,12 @@
   line-height: 1
 }
 
-.text-xl{
-  font-size: 1.25rem;
-  line-height: 1.75rem
-}
-
-.text-2xl{
-  font-size: 1.5rem;
-  line-height: 2rem
-}
-
-.font-semibold{
-  font-weight: 600
-}
-
 .font-bold{
   font-weight: 700
 }
 
-.text-white{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity))
+.font-semibold{
+  font-weight: 600
 }
 
 .text-black{
@@ -296,34 +286,16 @@
   color: rgb(0 0 0 / var(--tw-text-opacity))
 }
 
-.text-red-800{
+.text-white{
   --tw-text-opacity: 1;
-  color: rgb(153 27 27 / var(--tw-text-opacity))
+  color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
+.text-\[1\.5\]{
+  color: 1.5
 }
 
 .no-underline{
   -webkit-text-decoration-line: none;
           text-decoration-line: none
-}
-
-@media (min-width: 640px){
-  .sm\:flex-col{
-    flex-direction: column
-  }
-
-  @media (min-width: 768px){
-    .sm\:md\:flex-col{
-      flex-direction: column
-    }
-
-    .sm\:md\:flex{
-      display: flex
-    }
-  }
-}
-
-@media (min-width: 768px){
-  .md\:flex-col{
-    flex-direction: column
-  }
 }

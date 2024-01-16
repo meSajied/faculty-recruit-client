@@ -1,0 +1,26 @@
+### hello
+
+POST http://localhost:4414/account/applicant/signup
+Content-Type: application/json
+
+{
+  "id": "ce5e6w19-e362-4a0e-6d1c-069372cd67dc",
+  "firstName": "sajied",
+  "lastName": "yousuf",
+  "email": "sajied.yousuf@skiff.com",
+  "password": "sajied"
+}
+
+###get
+
+GET http://localhost:4414/account/applicant/login
+Content-Type: application/json
+
+{
+  "email": "sajied@out.om",
+  "password": "qwertysza"
+}
+
+### get pdf
+GET http://localhost:4414/homepage/pdfs/ce5e6c19-e362-4a0e-6d1c-069372cd67dc
+Content-Type: application/pdf
