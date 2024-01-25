@@ -8,7 +8,7 @@ import Signup from "./account/Signup";
 import ErrorPage from "./pages/ErrorPage";
 import {AuthProvider} from "./account/Authentication";
 import {RequiredAuthentication} from "./account/RequiredAuthentication";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./account/Dashboard";
 
 
 function App() {

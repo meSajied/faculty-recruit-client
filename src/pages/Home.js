@@ -29,7 +29,7 @@ function Home() {
 }
 
 const getJsonData = (data) => {
-  const jsonData = data.map((item, index) => (
+  return data.map((item, index) => (
       <div className="p-3 font-garamond" key={index}>
         <div className="text-3xl">
           {item.title}
@@ -56,7 +56,6 @@ const getJsonData = (data) => {
         </div>
       </div>
   ));
-  return jsonData;
 };
 
 export default Home;

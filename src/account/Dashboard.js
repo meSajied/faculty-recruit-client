@@ -1,5 +1,5 @@
 import React from "react";
-import {useAuth} from "../account/Authentication";
+import {useAuth} from "./Authentication";
 
 const Dashboard = () => {
   const auth = useAuth()
