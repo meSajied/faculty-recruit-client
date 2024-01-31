@@ -11,7 +11,7 @@ export const AuthProvider = ({children}) => {
     cookie? setUser(JSON.parse(cookie)): setUser({});
   }, []);
 
-  const isLoggedIn = !!(user?.userName && user?.id);
+  const isLoggedIn = !!(user?.email && user?.id);
 
   function login(user) {
     setUser(user);
@@ -40,6 +40,6 @@ function getCookie() {
 
 function setCookies(user) {
   const expirationDate = new Date();
-  expirationDate.setDate(expirationDate.getDate() + 2);
+  expirationDate.setDate(expirationDate.getDate() + 3);
   Cookies.set('user', JSON.stringify(user), { expires: expirationDate });
 }

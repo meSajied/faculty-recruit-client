@@ -5,10 +5,9 @@ import {useAuth} from "./Authentication";
 import {Navigate, useNavigate} from "react-router";
 
 const Login = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const navigate = useNavigate();
   const {login, isLoggedIn} = useAuth();
 
   if(isLoggedIn) {
@@ -19,13 +18,13 @@ const Login = () => {
 
   return (
       <div className="flex items-center justify-center h-screen">
-        <form onSubmit={handleLogin} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <form onSubmit={HandleLogin} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <div className="mb-4">
-            <label htmlFor='text' className="block text-gray-700 text-sm font-bold mb-2">
-              Username:
+            <label htmlFor='email' className="block text-gray-700 text-sm font-bold mb-2">
+              Email:
             </label>
-            <input type='text' name='username' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                   onChange={(e) => setUsername(e.target.value)}
+            <input type='email' name='email' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                   onChange={(e) => setEmail(e.target.value)}
                    required
             />
           </div>
@@ -49,20 +48,21 @@ const Login = () => {
       </div>
   )
 
-  async function handleLogin() {
-    await axios.get('http://localhost:4414/account/administration/login',
+  async function HandleLogin() {
+    const navigate = useNavigate();
+
+    await axios.get('http://localhost:4414/account/applicant/login',
         {
           params: {
-            username: username,
+            email: email,
             password: password
           }
         })
         .then(res => {
-          if(res.data?.userName && res.data?.id){
+          if(res.data?.email && res.data?.id){
             login(res.data);
           } else {
-            navigate('/');
-            alert(res.data);
+            navigate('/login');
           }
         });
   }
