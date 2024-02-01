@@ -73,6 +73,8 @@ const Signup = () => {
   )
 
   async function handleLogin(e) {
+    e.preventDefault()
+
     await axios.post('http://localhost:4414/account/applicant/signup', new FormData(e.currentTarget), {
       headers: {
         "Content-Type": "application/json"

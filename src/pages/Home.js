@@ -2,17 +2,17 @@ import React from "react";
 
 import Brand from "../components/Brand";
 import Navbar from "../components/Navbar";
-import data from "../job.json";
+import data from "../job.json"
 
 function Home() {
-  return(
+  return (
       <div>
         <div>
-        <Brand />
+          <Brand/>
         </div>
 
         <div>
-          <Navbar />
+          <Navbar/>
         </div>
 
         <div className="m-4 p-4">
@@ -21,16 +21,16 @@ function Home() {
           </div>
 
           <div className="m-5">
-            {getJsonData(data)}
+            {getJobData(data)}
           </div>
         </div>
       </div>
   )
 }
 
-const getJsonData = (data) => {
-  return data.map((item, index) => (
-      <div className="p-3 font-garamond" key={index}>
+const getJobData = (data) => {
+  return data.map((item) => (
+      <div className="p-3 font-garamond">
         <div className="text-3xl">
           {item.title}
         </div>
@@ -42,15 +42,14 @@ const getJsonData = (data) => {
 
           <div className="m-2 flex-grow">
             <div className="flex-grow font-semibold">
-              Advertised: <code className="code">{item.opens}</code>
+              Advertised: <code className="code">{item.advertised}</code>
             </div>
 
             <div className="flex-grow font-semibold">
-              Deadline: <code className="code">{item.closes}</code>
+              Deadline: <code className="code">{item.deadline}</code>
             </div>
           </div>
         </div>
-
         <div>
           {item.description}
         </div>

@@ -16,6 +16,7 @@ export const AuthProvider = ({children}) => {
   function login(user) {
     setUser(user);
     setCookies(user);
+    return;
   }
 
   function logout() {
@@ -42,4 +43,5 @@ function setCookies(user) {
   const expirationDate = new Date();
   expirationDate.setDate(expirationDate.getDate() + 3);
   Cookies.set('user', JSON.stringify(user), { expires: expirationDate });
+  return;
 }

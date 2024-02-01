@@ -176,10 +176,6 @@
   margin-bottom: 1rem
 }
 
-.mb-6{
-  margin-bottom: 1.5rem
-}
-
 .block{
   display: block
 }
@@ -250,11 +246,6 @@
   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
 }
 
-.bg-gray-200{
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity))
-}
-
 .bg-sust-wall{
   background-image: url('../img/sust_wall.jpeg')
 }
@@ -297,10 +288,6 @@
 
 .pt-6{
   padding-top: 1.5rem
-}
-
-.text-center{
-  text-align: center
 }
 
 .font-garamond{

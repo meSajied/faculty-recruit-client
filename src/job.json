@@ -2,8 +2,8 @@
   {
     "job_id": "ac2eb22",
     "title": "We need a Professor",
-    "opens": "2023-10-15",
-    "closes": "2023-10-31",
+    "advertised": "2023-10-15",
+    "deadline": "2023-10-31",
     "school": "",
     "department": "CSE",
     "position": "Professor",
@@ -12,8 +12,8 @@
   {
     "job_id": "13c3deb",
     "title": "We need a lecturer",
-    "opens": "2023-11-05",
-    "closes": "2023-11-20",
+    "advertised": "2023-11-05",
+    "deadline": "2023-11-20",
     "school": "",
     "department": "EEE",
     "position": "Lecturer",

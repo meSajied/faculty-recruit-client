@@ -5,6 +5,8 @@ import {useAuth} from "./Authentication";
 import {Navigate, useNavigate} from "react-router";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -48,8 +50,8 @@ const Login = () => {
       </div>
   )
 
-  async function HandleLogin() {
-    const navigate = useNavigate();
+  async function HandleLogin(e) {
+    e.preventDefault()
 
     await axios.get('http://localhost:4414/account/applicant/login',
         {
@@ -67,5 +69,4 @@ const Login = () => {
         });
   }
 };
-
 export default Login;
