@@ -2,13 +2,12 @@ import React, {useState} from "react";
 
 import axios from "axios";
 import {useAuth} from "./Authentication";
-import {Navigate, useNavigate} from "react-router";
+import {Navigate} from "react-router";
 
 const Login = () => {
-  const navigate = useNavigate();
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showWarning, setShowWarning] = useState(false);
 
   const {login, isLoggedIn} = useAuth();
 
@@ -20,7 +19,19 @@ const Login = () => {
 
   return (
       <div className="flex items-center justify-center h-screen">
-        <form onSubmit={HandleLogin} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div className="flex flex-col items-center">
+          {showWarning && (
+              <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded flex">
+                <p>Login failed. Please check your credentials and try again.</p>
+                <span
+                    className="float-right cursor-pointer"
+                    onClick={() => setShowWarning(false)}
+                >
+              &times;
+            </span>
+              </div>
+          )}
+        <form onSubmit={handleLogin} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <div className="mb-4">
             <label htmlFor='email' className="block text-gray-700 text-sm font-bold mb-2">
               Email:
@@ -47,26 +58,29 @@ const Login = () => {
             </button>
           </div>
         </form>
+        </div>
       </div>
   )
 
-  async function HandleLogin(e) {
-    e.preventDefault()
+  async function handleLogin(e) {
+    e.preventDefault();
 
-    await axios.get('http://localhost:4414/account/applicant/login',
-        {
-          params: {
-            email: email,
-            password: password
-          }
-        })
-        .then(res => {
-          if(res.data?.email && res.data?.id){
-            login(res.data);
-          } else {
-            navigate('/login');
-          }
-        });
+    try {
+      await axios.post('http://localhost:4414/account/applicant/login', {
+        email: email,
+        password: password
+      })
+          .then(res => {
+            if(res.data?.email && res.data?.id){
+              login(res.data);
+            } else {
+              setShowWarning(true);
+            }
+          });
+    }catch(e) {
+      console.log(e);
+      setShowWarning(true);
+    }
   }
 };
 export default Login;
