@@ -56,6 +56,7 @@ const Signup = () => {
               First Name:
             </label>
             <input type='text' name='firstName' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    value={formData.firstName}
                    onChange={handleChange}
                    required
             />
@@ -66,6 +67,7 @@ const Signup = () => {
               Last Name:
             </label>
             <input type='text' name='lastName' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    value={formData.lastName}
                    onChange={handleChange}
                    required
             />
@@ -76,6 +78,7 @@ const Signup = () => {
               Email:
             </label>
             <input type='email' name='email' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    value={formData.email}
                    onChange={handleChange}
                    required
             />
@@ -86,6 +89,7 @@ const Signup = () => {
               Password:
             </label>
             <input type='password' name='password' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    value={formData.password}
                    onChange={handleChange}
                    required
             />
@@ -116,11 +120,24 @@ const Signup = () => {
             } else {
               setShowWarning(true);
             }
+
+            clearData();
           });
     }catch(e) {
       console.log(e);
+      clearData();
       setShowWarning(true);
     }
+  }
+
+  function clearData() {
+    setFormData({
+      id: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+  });
   }
 };
 

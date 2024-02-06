@@ -5,8 +5,10 @@ import {useAuth} from "./Authentication";
 import {Navigate} from "react-router";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  });
   const [showWarning, setShowWarning] = useState(false);
 
   const {login, isLoggedIn} = useAuth();
@@ -15,6 +17,15 @@ const Login = () => {
     return (
         <Navigate to='/' />
     )
+  }
+
+  function handleChange(e) {
+    const [name, value] = e.target;
+
+    setFormData((prevData) => ({
+      ...prevData, 
+      [name]: value
+    }))
   }
 
   return (
@@ -37,7 +48,8 @@ const Login = () => {
               Email:
             </label>
             <input type='email' name='email' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                   onChange={(e) => setEmail(e.target.value)}
+                    value={formData.email}
+                   onChange={handleChange}
                    required
             />
           </div>
@@ -47,7 +59,8 @@ const Login = () => {
               Password:
             </label>
             <input type='password' name='password' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                   onChange={(e) => setPassword(e.target.value)}
+                    value={formData.password}
+                   onChange={handleChange}
                    required
             />
           </div>
@@ -66,21 +79,31 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:4414/account/applicant/login', {
-        email: email,
-        password: password
-      })
+      await axios.post('http://localhost:4414/account/applicant/login', formData, {
+        headers: {
+          "Content-Type": "application/json"
+        }})
           .then(res => {
             if(res.data?.email && res.data?.id){
               login(res.data);
             } else {
               setShowWarning(true);
             }
+
+            clearData();
           });
     }catch(e) {
       console.log(e);
+      clearData();
       setShowWarning(true);
     }
+  }
+
+  function clearData() {
+    setFormData({
+      email: "",
+      password: ""
+    })
   }
 };
 export default Login;
