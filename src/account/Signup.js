@@ -109,7 +109,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:4414/account/applicant/signup', formData, {
+      await axios.post('http://localhost:4414/applicant/signup', formData, {
         headers: {
           "Content-Type": "application/json"
         }
@@ -132,7 +132,7 @@ const Signup = () => {
 
   function clearData() {
     setFormData({
-      id: "",
+      id: v4(),
       firstName: "",
       lastName: "",
       email: "",

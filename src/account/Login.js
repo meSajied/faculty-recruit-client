@@ -20,7 +20,7 @@ const Login = () => {
   }
 
   function handleChange(e) {
-    const [name, value] = e.target;
+    const {name, value} = e.target;
 
     setFormData((prevData) => ({
       ...prevData, 
@@ -48,7 +48,7 @@ const Login = () => {
               Email:
             </label>
             <input type='email' name='email' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    value={formData.email}
+                  value={formData.email}
                    onChange={handleChange}
                    required
             />
@@ -59,7 +59,7 @@ const Login = () => {
               Password:
             </label>
             <input type='password' name='password' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    value={formData.password}
+                  value={formData.password}
                    onChange={handleChange}
                    required
             />
@@ -79,7 +79,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:4414/account/applicant/login', formData, {
+      await axios.post('http://localhost:4414/applicant/login', formData, {
         headers: {
           "Content-Type": "application/json"
         }})

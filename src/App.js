@@ -9,6 +9,7 @@ import ErrorPage from "./pages/ErrorPage";
 import {AuthProvider} from "./account/Authentication";
 import {RequiredAuthentication} from "./account/RequiredAuthentication";
 import Dashboard from "./account/Dashboard";
+import JobApply from "./pages/JobApply";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
           <Route path="dashboard" element={<RequiredAuthentication children={<Dashboard />} />} />
+          <Route path="job/apply" element={<RequiredAuthentication children={JobApply} />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>

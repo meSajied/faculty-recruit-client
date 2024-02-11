@@ -1,5 +1,5 @@
 import React from "react";
-import {useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {useAuth} from "../account/Authentication";
 
 const Navbar = () => {
@@ -7,40 +7,32 @@ const Navbar = () => {
 
   return(
       <nav className="m-5 flex justify-end">
-        <div className="font-sawarabi
-            font-bold text-black">
+        <div className="font-sawarabi">
         {isLoggedIn ? UserDashboard(user.firstName) : LoginAndSignUp()}
         </div>
       </nav>
   )
 }
 
-function UserDashboard(name) {
-  const navigate = useNavigate();
-  return(
+function UserDashboard(name) {return(
       <div className="space-x-5">
-        <button className="font-sawarabi text-2xl"
-                onClick={()=> {navigate("/dashboard")}}>
-          {name}
-        </button>
+        <Link className="font-sawarabi text-2xl no-underline p-2 border rounded text-red-700" to="/dashboard">
+          {name}'s dashboard
+        </Link>
       </div>
   );
 }
 
 function LoginAndSignUp() {
-  const navigate = useNavigate();
-
   return(
       <div className="space-x-5">
-        <button className="font-sawarabi text-2xl"
-            onClick={()=> {navigate("/signup")}}>
+        <Link className="font-sawarabi text-[20px] no-underline bg-red-900 text-white p-2 border rounded" to="/signup">
           Sign up
-        </button>
+        </Link>
 
-        <button className=" font-sawarabi text-2xl"
-            onClick={()=> {navigate("/login")}}>
+        <Link className="font-sawarabi text-[20px] no-underline bg-red-900 text-white p-2 border rounded" to="/login">
           Login
-        </button>
+        </Link>
       </div>
   );
 }
