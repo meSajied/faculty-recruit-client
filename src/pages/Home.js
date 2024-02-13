@@ -46,8 +46,8 @@ const getJobData = (data) => {
   if(data.length === 0) {
     return (<div className="p-3 font-garamond text-3xl text-center">No Openings</div>)
   }else {
-  return data.map((item) => (
-    <div className="p-3 font-garamond text-[18px]">
+  return data.map((item, index) => (
+    <div className="p-3 font-garamond text-[18px]" key={index}>
       <div className="text-3xl">{item.title}</div>
 
       <div className="flex">

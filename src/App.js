@@ -8,9 +8,11 @@ import Signup from "./account/Signup";
 import ErrorPage from "./pages/ErrorPage";
 import {AuthProvider} from "./account/Authentication";
 import {RequiredAuthentication} from "./account/RequiredAuthentication";
-import Dashboard from "./account/Dashboard";
+import {Profile} from "./pages/Profile";
 import JobApply from "./pages/JobApply";
-
+import { ChangePassword } from "./pages/ChangePassword";
+import {Logout} from "./account/Logout"
+import { DeleteAccount } from "./pages/DeleteAccount";
 
 function App() {
   return(
@@ -20,8 +22,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
-          <Route path="dashboard" element={<RequiredAuthentication children={<Dashboard />} />} />
-          <Route path="job/apply" element={<RequiredAuthentication children={JobApply} />} />
+          <Route path="profile" element={<RequiredAuthentication children={<Profile />} />} />
+          <Route path="change-password" element={<RequiredAuthentication children={<ChangePassword />} />} />
+          <Route path="logout" element={<RequiredAuthentication children={<Logout />} />} />
+          <Route path="delete-account" element={<RequiredAuthentication children={<DeleteAccount />} />} />
+          <Route path="job/apply" element={<RequiredAuthentication children={<JobApply />} />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
