@@ -26,7 +26,7 @@ function App() {
           <Route path="change-password" element={<RequiredAuthentication children={<ChangePassword />} />} />
           <Route path="logout" element={<RequiredAuthentication children={<Logout />} />} />
           <Route path="delete-account" element={<RequiredAuthentication children={<DeleteAccount />} />} />
-          <Route path="job/apply" element={<RequiredAuthentication children={<JobApply />} />} />
+          <Route path="job/apply/:jobId" element={<RequiredAuthentication children={<JobApply />} />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>

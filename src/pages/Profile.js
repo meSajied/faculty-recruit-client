@@ -29,18 +29,25 @@ const Profile = () => {
   });
 
   const updateFormData = useCallback((data) => {
-    const filteredData = Object.keys(data).reduce((acc, key) => {
-      if (formData.hasOwnProperty(key)) {
-        acc[key] = data[key];
-      }
-      return acc;
-    }, {});
-
     setFormData({
-      ...formData,
-      ...filteredData,
-    });
-  }, [formData])
+      id: data.id,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      fathersName: data.fathersName,
+      mothersName: data.mothersName,
+      spouseName: data.spouseName,
+      birthDate: data.birthDate,
+      maritalStatus: data.maritalStatus,
+      nationalIdNumber: data.nationalIdNumber,
+      currentAddress: data.currentAddress,
+      mobile: data.mobile,
+      email: data.email,
+      permanentAddress: data.permanentAddress,
+      country: data.country,
+      nationality: data.nationality,
+      religion: data.religion,
+    })
+  }, [])
 
   useEffect(() => {
     const fetchData = async() => {
@@ -78,7 +85,7 @@ const Profile = () => {
     e.preventDefault();
 
    try {
-      await axios.post("http://localhost:4414/applicant/update-profile", id).then((r) => {
+      await axios.post("http://localhost:4414/applicant/update-profile", formData).then((r) => {
         if(r.data?.msg === "OK") {
           setUpdateSuccess(true);
         }

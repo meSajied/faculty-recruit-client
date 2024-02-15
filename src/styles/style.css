@@ -190,6 +190,11 @@
   margin-right: auto
 }
 
+.mx-4{
+  margin-left: 1rem;
+  margin-right: 1rem
+}
+
 .mb-2{
   margin-bottom: 0.5rem
 }
@@ -212,6 +217,10 @@
 
 .mt-8{
   margin-top: 2rem
+}
+
+.mb-6{
+  margin-bottom: 1.5rem
 }
 
 .block{
@@ -248,6 +257,10 @@
 
 .cursor-pointer{
   cursor: pointer
+}
+
+.resize-none{
+  resize: none
 }
 
 .appearance-none{
@@ -345,6 +358,16 @@
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+}
+
+.bg-gray-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity))
+}
+
+.bg-red-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity))
 }
 
 .bg-sust-wall{
@@ -513,6 +536,11 @@
 .hover\:bg-gray-100:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity))
+}
+
+.hover\:bg-red-700:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity))
 }
 
 .hover\:text-red-700:hover{
