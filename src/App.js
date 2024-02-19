@@ -11,6 +11,7 @@ import {RequiredAuthentication} from "./account/RequiredAuthentication";
 import {Profile} from "./pages/Profile";
 import JobApply from "./pages/JobApply";
 import { ChangePassword } from "./pages/ChangePassword";
+import {Applications} from "./pages/Applications";
 import {Logout} from "./account/Logout"
 import { DeleteAccount } from "./pages/DeleteAccount";
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="signup" element={<Signup />} />
           <Route path="profile" element={<RequiredAuthentication children={<Profile />} />} />
           <Route path="change-password" element={<RequiredAuthentication children={<ChangePassword />} />} />
+          <Route path="applications" element={<RequiredAuthentication children={<Applications />} />} />
           <Route path="logout" element={<RequiredAuthentication children={<Logout />} />} />
           <Route path="delete-account" element={<RequiredAuthentication children={<DeleteAccount />} />} />
           <Route path="job/apply/:jobId" element={<RequiredAuthentication children={<JobApply />} />} />

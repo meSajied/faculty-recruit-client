@@ -34,8 +34,8 @@ function UserDashboard(name) {
               <Link to="/change-password" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-700">
                 Change Password
               </Link>
-              <Link to="/job-list/:jobId" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-700">
-                Job List
+              <Link to="/applications" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-700">
+                Applications
               </Link>
               <Link to="/logout" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-700">
                 Logout
