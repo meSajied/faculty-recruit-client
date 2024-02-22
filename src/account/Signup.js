@@ -109,7 +109,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:4414/applicant/signup', formData, {
+      await axios.post('https://faculty-recruit-server-vcgo.onrender.com/applicant/signup', formData, {
         headers: {
           "Content-Type": "application/json"
         }

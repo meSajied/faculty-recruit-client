@@ -11,7 +11,7 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4414/job");
+        const response = await axios.get("https://faculty-recruit-server-vcgo.onrender.com/job");
         setJobData(response.data);
       } catch (error) {
         console.error("Error fetching job data:", error);
@@ -72,7 +72,7 @@ const getJobData = (data) => {
 
       <div className="mt-3">
         <Link className="no-underline bg-red-700 bordar rounded p-2 mx-2 text-white"
-            to={`http://localhost:4414/pdfs/${item.id}`}>Job Details</Link>
+            to={`https://faculty-recruit-server-vcgo.onrender.com/pdfs/${item.id}`}>Job Details</Link>
 
         <Link className="no-underline bg-red-900 bordar rounded p-2 mx-2 text-white"
               to={`/job/apply/${item.id}`}>Apply</Link>

@@ -159,7 +159,7 @@ function JobApply() {
     console.log(formData);
     
     try {
-      await axios.post('http://localhost:4414/applicant/apply-for-job', formData, {
+      await axios.post('https://faculty-recruit-server-vcgo.onrender.com/applicant/apply-for-job', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

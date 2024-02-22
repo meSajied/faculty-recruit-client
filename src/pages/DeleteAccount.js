@@ -75,7 +75,7 @@ const DeleteAccount = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:4414/applicant/delete-account', formData, {
+      await axios.post('https://faculty-recruit-server-vcgo.onrender.com/applicant/delete-account', formData, {
         headers: {
           "Content-Type": "application/json"
         }

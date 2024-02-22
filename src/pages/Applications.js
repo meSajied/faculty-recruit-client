@@ -10,7 +10,7 @@ const Applications = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post("http://localhost:4414/applicant/applications", {id: user.id}, {
+        const response = await axios.post("https://faculty-recruit-server-vcgo.onrender.com/applicant/applications", {id: user.id}, {
           headers: {
             "Content-Type": "application/json"
           }

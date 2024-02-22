@@ -52,7 +52,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchData = async() => {
       try {
-        const res = await axios.get("http://localhost:4414/applicant/fetch-details", {
+        const res = await axios.get("https://faculty-recruit-server-vcgo.onrender.com/applicant/fetch-details", {
           params: {
             id: id
           },
@@ -85,7 +85,7 @@ const Profile = () => {
     e.preventDefault();
 
    try {
-      await axios.post("http://localhost:4414/applicant/update-profile", formData).then((r) => {
+      await axios.post("https://faculty-recruit-server-vcgo.onrender.com/applicant/update-profile", formData).then((r) => {
         if(r.data?.msg === "OK") {
           setUpdateSuccess(true);
         }
