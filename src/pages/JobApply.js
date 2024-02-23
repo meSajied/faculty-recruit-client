@@ -19,6 +19,7 @@ function JobApply() {
   const [formData, setFormData] = useState({
     id: v4(),
     jobId: jobId,
+    status: "processing",
     applicantId: user.id
   });
 
@@ -63,6 +64,15 @@ function JobApply() {
                   type="hidden"
                   name="id"
                   value={formData.id}
+                  required
+              />
+            </div>
+
+            <div>
+              <input
+                  type="hidden"
+                  name="status"
+                  value={formData.status}
                   required
               />
             </div>
@@ -179,6 +189,7 @@ function JobApply() {
     setFormData({
       id: v4(),
       jobId: jobId,
+      status: "processing",
       applicantId: user.id,
     });
 
